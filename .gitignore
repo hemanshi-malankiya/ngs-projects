@@ -5,3 +5,10 @@ results/*.sam
 *.sra
 *.fastq
 Miniconda3*.sh
+ref/*.fna
+ref/*.fna.gz
+ref/*.amb
+ref/*.ann
+ref/*.bwt
+ref/*.pac
+ref/*.sa
