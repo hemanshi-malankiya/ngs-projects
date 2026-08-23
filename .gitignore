@@ -1,0 +1,7 @@
+raw_data/
+results/*.bam
+results/*.bam.bai
+results/*.sam
+*.sra
+*.fastq
+Miniconda3*.sh
