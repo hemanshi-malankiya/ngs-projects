@@ -1,5 +1,14 @@
 # Variant Calling Pipeline for E. coli Genome Using NGS Data
 
+## Key Results
+- 50,000 read pairs (100,000 total reads) were analyzed
+- 80,806 reads (80.8%) passed quality filtering after trimming
+- 94.26% of reads mapped successfully to the E. coli reference genome
+- 91.54% of read pairs were properly paired after alignment
+- Base quality (Q30) improved from 81.3% to 87.7% (Read 1) and 71.0% to 84.0% (Read 2) after trimming
+- 27,124 total variant sites were identified: 26,989 SNPs and 135 indels
+- Transition/transversion (Ts/Tv) ratio: 2.61
+
 ## Project Overview
 This project implements a complete Next-Generation Sequencing (NGS) variant calling pipeline. It identifies single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels) in an *E. coli* sequencing sample by comparing it against the *E. coli* K-12 MG1655 reference genome. The project was built to demonstrate practical, hands-on NGS analysis skills using standard bioinformatics tools and a real public dataset.
 
@@ -27,6 +36,30 @@ How does the genome of the sequenced *E. coli* sample differ from the reference 
 3. **Alignment** — BWA-MEM aligns cleaned reads to the reference genome
 4. **Sorting & Indexing** — samtools converts SAM to sorted, indexed BAM format
 5. **Variant Calling** — bcftools identifies variant positions and generates summary statistics
+    E. coli NGS Reads
+           |
+           v
+     Quality Control
+        (FastQC)
+           |
+           v
+  Adapter/Quality Trimming
+        (fastp)
+           |
+           v
+   Reference Alignment
+       (BWA-MEM)
+           |
+           v
+    BAM Processing
+      (samtools)
+           |
+           v
+     Variant Calling
+       (bcftools)
+           |
+           v
+  Variant Statistics
 
 
 ## Installation
