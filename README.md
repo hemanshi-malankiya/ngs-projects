@@ -36,6 +36,7 @@ How does the genome of the sequenced *E. coli* sample differ from the reference 
 3. **Alignment** — BWA-MEM aligns cleaned reads to the reference genome
 4. **Sorting & Indexing** — samtools converts SAM to sorted, indexed BAM format
 5. **Variant Calling** — bcftools identifies variant positions and generates summary statistics
+```
     E. coli NGS Reads
            |
            v
@@ -60,6 +61,7 @@ How does the genome of the sequenced *E. coli* sample differ from the reference 
            |
            v
   Variant Statistics
+```
 
 
 ## Installation
