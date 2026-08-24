@@ -82,9 +82,10 @@ Initial FastQC flagged "Per base sequence quality" and "Adapter Content" as fail
 ### Figures
 Full interactive HTML reports are included in the results/ folder. GitHub displays HTML files as raw code by default, so please download and open the files below in a browser to view the complete interactive reports with all graphs.
 
-- results/SRR2584863_1_fastqc.html and results/SRR2584863_2_fastqc.html - full raw read quality reports (all graphs: per-base quality, GC content, duplication levels, adapter content, etc.)
-- results/fastp.html - full before/after trimming report (quality curves, filtering summary, adapter trimming details)
-- results/stats.txt - complete variant calling statistics
+- [Read 1 FastQC Report](https://htmlpreview.github.io/?https://github.com/hemanshi-malankiya/ngs-projects/blob/main/results/SRR2584863_1_fastqc.html) - full raw read quality report (all graphs: per-base quality, GC content, duplication levels, adapter content, etc.)
+- [Read 2 FastQC Report](https://htmlpreview.github.io/?https://github.com/hemanshi-malankiya/ngs-projects/blob/main/results/SRR2584863_2_fastqc.html) - full raw read quality report
+- [fastp Trimming Report](https://htmlpreview.github.io/?https://github.com/hemanshi-malankiya/ngs-projects/blob/main/results/fastp.html) - full before/after trimming report (quality curves, filtering summary, adapter trimming details)
+- [Full Variant Statistics](results/stats.txt) - complete variant calling statistics
 
 Key quality graph (Per Base Sequence Quality) shown below:
 
