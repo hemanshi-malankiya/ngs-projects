@@ -80,10 +80,15 @@ The Ts/Tv ratio of 2.61 falls within the expected range for bacterial genomes (t
 Initial FastQC flagged "Per base sequence quality" and "Adapter Content" as failing. After trimming with fastp, base quality improved substantially, confirming the cleaning step was effective before alignment.
 
 ### Figures
-- [Read 1 FastQC Report](results/SRR2584863_1_fastqc.html) - raw read quality report
-- [Read 2 FastQC Report](results/SRR2584863_2_fastqc.html) - raw read quality report
-- [fastp Trimming Report](results/fastp.html) - before/after cleaning summary
-- [Full Variant Statistics](results/stats.txt) - complete bcftools output
+Full interactive HTML reports are included in the results/ folder. GitHub displays HTML files as raw code by default, so please download and open the files below in a browser to view the complete interactive reports with all graphs.
+
+- results/SRR2584863_1_fastqc.html and results/SRR2584863_2_fastqc.html - full raw read quality reports (all graphs: per-base quality, GC content, duplication levels, adapter content, etc.)
+- results/fastp.html - full before/after trimming report (quality curves, filtering summary, adapter trimming details)
+- results/stats.txt - complete variant calling statistics
+
+Key quality graph (Per Base Sequence Quality) shown below:
+
+![Per Base Sequence Quality](results/figures/fastqc_quality_before.png)
 
 ## Limitations
 - Analysis used a 50,000-read-pair subset rather than the full sequencing run, to keep processing fast and reproducible on a personal laptop; most genome positions had low read depth (1-5x coverage)
