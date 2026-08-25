@@ -6,8 +6,9 @@
 - 94.26% of reads mapped successfully to the E. coli reference genome
 - 91.54% of read pairs were properly paired after alignment
 - Base quality (Q30) improved from 81.3% to 87.7% (Read 1) and 71.0% to 84.0% (Read 2) after trimming
-- 27,124 total variant sites were identified: 26,989 SNPs and 135 indels
+- 27,124 raw variant sites were identified: 26,989 SNPs and 135 indels
 - Transition/transversion (Ts/Tv) ratio: 2.61
+- After quality (QUAL>=20) and depth (DP>=5) filtering, 3,619 high-confidence variants remained: 3,590 SNPs and 29 indels
 
 ## Project Overview
 This project implements a complete Next-Generation Sequencing (NGS) variant calling pipeline. It identifies single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels) in an *E. coli* sequencing sample by comparing it against the *E. coli* K-12 MG1655 reference genome. The project was built to demonstrate practical, hands-on NGS analysis skills using standard bioinformatics tools and a real public dataset.
@@ -103,7 +104,17 @@ bash scripts/05_call_variants.sh
 | Multiallelic sites | 1 |
 | Transition/Transversion (Ts/Tv) ratio | 2.61 |
 
-The Ts/Tv ratio of 2.61 falls within the expected range for bacterial genomes (typically 2.0-2.5+), indicating the variant calls are biologically credible rather than random noise.
+The Ts/Tv ratio of 2.61 falls within the expected range for bacterial genomes (typically 2.0-2.5+). This provides a useful summary of the substitution spectrum; variant reliability was further assessed through quality and depth-based filtering (see Variant Filtering below).
+
+### Variant Filtering
+
+Raw variant calls were filtered to retain only high-confidence variants, using a minimum quality score (QUAL >= 20) and minimum read depth (DP >= 5).
+
+| Metric | Raw | High-Confidence (Filtered) |
+|---|---|---|
+| Total variants | 27,124 | 3,619 |
+| SNPs | 26,989 | 3,590 |
+| Indels | 135 | 29 |
 
 ### Read Quality Improvement (fastp trimming)
 | Metric | Before Trimming | After Trimming |
@@ -128,13 +139,11 @@ Key quality graph (Per Base Sequence Quality) shown below:
 
 ## Limitations
 - Analysis used a 50,000-read-pair subset rather than the full sequencing run, to keep processing fast and reproducible on a personal laptop; most genome positions had low read depth (1-5x coverage)
-- No variant filtering by quality score or depth was applied beyond bcftools default calling model
 - No functional annotation of variants (e.g., which genes are affected) was performed in this version
 
 ## Future Work
 - Re-run the full, unsubsetted SRR2584863 dataset for higher-confidence, higher-depth variant calls
-- Apply quality/depth-based variant filtering
-- Annotate variants using SnpEff or ANNOVAR to identify affected genes
+- Annotate high-confidence variants using SnpEff or ANNOVAR to identify affected genes
 - Automate the pipeline using Snakemake or Nextflow
 - Extend the analysis to compare multiple E. coli strains
 
