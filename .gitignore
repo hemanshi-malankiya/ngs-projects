@@ -13,3 +13,5 @@ ref/*.bwt
 ref/*.pac
 ref/*.sa
 ref/*.fai
+results_300k/
+raw_data_300k/
