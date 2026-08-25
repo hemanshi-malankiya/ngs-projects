@@ -15,3 +15,5 @@ ref/*.sa
 ref/*.fai
 results_300k/
 raw_data_300k/
+qc_300k/
+trimmed_data_300k/
