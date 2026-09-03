@@ -17,3 +17,38 @@ results_300k/
 raw_data_300k/
 qc_300k/
 trimmed_data_300k/
+
+# Raw sequencing data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Alignment files
+*.sam
+*.bam
+*.bai
+*.cram
+*.crai
+
+# Variant calling intermediate files
+*.bcf
+*.bcf.csi
+
+# Compressed VCF files
+*.vcf.gz
+*.vcf.gz.tbi
+
+# Reference genome and annotation data
+ref/
+data/
+
+# FastQC compressed files
+*.zip
+
+# SnpEff generated database/configuration files
+snpEff_genes.txt
+snpEff_summary.html
+
+# Large structural files
+*.pdb
